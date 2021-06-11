@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   entry: [path.resolve(__dirname, 'src', 'index.js')],
@@ -15,7 +16,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader']
+        use: ['babel-loader']
       },
       {
         test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
@@ -35,6 +36,7 @@ module.exports = {
     extensions: ['.js', '.jsx']
   },
   plugins: [
+    new ESLintPlugin(),
     new CleanWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.ids.HashedModuleIdsPlugin(),
