@@ -1,38 +1,25 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import { Grommet } from 'grommet';
+import Header from './Header';
 
-const Button = styled.button`
-  background: transparent;
-  border-radius: 3px;
-  border: 2px solid palevioletred;
-  color: palevioletred;
-  margin: 0 1em;
-  padding: 0.25em 1em;
-
-  ${props =>
-    props.primary &&
-    css`
-      background: palevioletred;
-      color: white;
-    `};
-`;
-
-const Container = styled.div`
-  text-align: center;
-`;
+const theme = {
+  global: {
+    colors: {
+      brand: '#228BE6',
+    },
+    font: {
+      family: 'Roboto',
+      size: '18px',
+      height: '20px',
+    },
+  },
+};
 
 const App = () => {
   return (
-    <React.Fragment>
-      <div role="banner"><h1>This is the header</h1></div>
-      <div role="navigation">This is the nav</div>
-      <div role="main">This is the main</div>
-      <div role="contentinfo">This is the footer</div>
-      <Container>
-        <Button>Normal Button</Button>
-        <Button primary>Primary Button</Button>
-      </Container>
-    </React.Fragment>
+    <Grommet theme={theme}>
+      <Header>Weather App</Header>
+    </Grommet>
   );
 };
 
