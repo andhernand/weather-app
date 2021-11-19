@@ -38,7 +38,6 @@ module.exports = {
   plugins: [
     new ESLintPlugin(),
     new CleanWebpackPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.ids.HashedModuleIdsPlugin(),
     new HtmlWebPackPlugin({
       filename: 'index.html',
@@ -48,7 +47,6 @@ module.exports = {
   ],
   devtool: 'eval-source-map',
   devServer: {
-    contentBase: path.resolve(__dirname, 'build'),
     hot: true,
     historyApiFallback: true
   },
