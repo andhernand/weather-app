@@ -42,6 +42,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
+    globalSetup: './tests/global-setup.js',
     setupFiles: ['./tests/setup.js'],
     testMatch: ['./tests/**/*.test.js?(x)'],
   },
