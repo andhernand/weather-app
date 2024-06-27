@@ -13,7 +13,13 @@ describe('Hour Item', () => {
   };
 
   beforeEach(() => {
-    render(<HourItem hour={hour} />);
+    render(
+      <table>
+        <tbody>
+          <HourItem hour={hour} />
+        </tbody>
+      </table>,
+    );
   });
 
   it('displays weekday', () => {

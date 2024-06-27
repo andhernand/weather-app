@@ -28,8 +28,11 @@ jobs:
       - name: Run Linter
         run: npm run lint
 
+      - name: Run Prettier Check
+        run: npm run pcheck
+
       - name: Run Tests
-        run: npm run test
+        run: npm run tests
 
       - name: Build application
         run: npm run build
