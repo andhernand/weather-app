@@ -45,5 +45,9 @@ export default defineConfig({
     globalSetup: './tests/global-setup.js',
     setupFiles: ['./tests/setup.js'],
     testMatch: ['./tests/**/*.test.js?(x)'],
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'cobertura'],
+    },
   },
 });
