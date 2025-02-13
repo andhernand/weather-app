@@ -26,3 +26,4 @@ dist-ssr
 # ssl certificate files
 weather-app.key
 weather-app.pem
+coverage/
